@@ -1,0 +1,26 @@
+body #product-add div {
+  display: flex;
+  flex-direction: space-between;
+  margin-top: 0.5rem; }
+  body #product-add div label {
+    width: 10vw; }
+  body #product-add div input {
+    display: inline-block;
+    width: 80vw;
+    padding: 0.3rem;
+    font-size: 0.7rem;
+    font-family: sans-serif;
+    outline-color: black; }
+
+body #product-add input[type="submit"] {
+  display: inline-block;
+  width: 20vw;
+  padding: 0.3rem;
+  font-size: 0.7rem;
+  font-family: sans-serif;
+  background-color: palevioletred;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+  border: none; }

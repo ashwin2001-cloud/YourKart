@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/css/checkout.css">
+<section id="checkout-page">
+    <h2>CHECKOUT</h2>
+    <h4>Your Total:<%= totalPrice %></h4>
+    <form action="/api/users/buy/<%= locals.user.id %>" method="POST">
+        <div>
+            <label>
+                Mobile:
+            </label>
+            <input type="number" name="mobile" required>
+        </div>
+        <div>
+            <label>
+                Address:
+            </label>
+            <input type="text" name="address" required>
+        </div>
+        
+        
+        <!-- Card Holder Name:<input type="text" name="cardholdername" required>
+        Credit Card Number:<input type="number" name="cardnumber" required>
+        Expiration Month:<input type="number" name="expmon" required>
+        Expiration year:<input type="number" name="expyr" required>
+        CVC:<input type="number" name="cvc"> -->
+        <input type="submit" value="BUY">
+    </form>
+</section>

@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/css/vendor-product-add.css">
+<section id="product-add">
+    <h1>Add Product</h1>
+    <form action="/vendor/product-insertion-page/create" enctype="multipart/form-data" method="POST">
+        <div>
+            <label for="productid">Product-id:</label>
+        <input type="number" name="productid" id="productid" required>
+        </div>
+        <div>
+            <label for="name">Name:</label>
+        <input type="text" name="name" id="name"  required>
+        </div>
+        <div>
+            <label for="price">Price:</label>
+            <input type="number" name="price"  id="price" required>
+        </div>
+        <div>
+            <label for="type">Type:</label>
+        <input type="text" name="type" id="type"  required>
+        </div>
+        <div>
+            <label for="subtype">Subtype:</label>
+        <input type="text" name="subtype"  id="subtype" required>
+        </div>
+        <div>
+            <label for="description">Description:</label>
+        <input type="text" name="description"  id="description" required>
+        </div>
+        <div>
+            <label for="manufacturer" >Manufacturer:</label>
+        <input type="text" name="manufacturer" id="manufacturer"  required>
+        </div>
+        <div><label for="stock">Stock:</label>
+            <input type="number" name="stock" id="stock"  required></div>
+        <div><label for="avatar">Avatar:</label>
+            <input type="file" name="avatar"  id="avatar" ></div>
+       
+        
+        
+        
+        
+        
+        
+        
+        <input type="submit" value="Add">
+    </form>
+
+</section>

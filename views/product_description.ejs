@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/css/product-description.css">
+<h1><%= product.name %></h1>
+
+<img src="<%= product.avatar %>" alt="<%= product.name %>" width="150" height="200">
+<h1><%= product.description %></h1>
+<h1>Rs <%= product.price %></h1>
+<% if(locals.user){ %>
+    <span id="cart-symbol"><a href="/users/cart/<%= product._id %>">
+    
+        <button>Add to Cart<i class="fas fa-shopping-cart"></i></button>
+        
+    </a>
+    </span>
+<% }else{ %>
+    <span id="cart-symbol"><a href="/users/sign-in">
+        <button><i class="fas fa-shopping-cart"></i></button>
+    </a></span>
+<% } %>

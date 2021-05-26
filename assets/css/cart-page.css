@@ -1,0 +1,22 @@
+body #cart-container #cart-item {
+  display: flex;
+  justify-content: space-between;
+  width: 60vw; }
+  body #cart-container #cart-item #description {
+    width: 20vw; }
+  body #cart-container #cart-item #remove-button {
+    height: 4vh;
+    width: 8vw; }
+
+body a input[type="submit"] {
+  display: inline-block;
+  width: 20vw;
+  padding: 0.3rem;
+  font-size: 0.7rem;
+  font-family: sans-serif;
+  background-color: palevioletred;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+  border: none; }
