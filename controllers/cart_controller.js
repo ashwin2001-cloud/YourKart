@@ -29,7 +29,7 @@ module.exports.addProductsInCart=function(req,res){
         console.log("session:::::::",req.session);
         console.log(req.session.cart.items);
         //console.log('generated array',cart.generateArray());
-        return res.redirect('back');
+        return res.redirect('/users/cartpage/${req.user.id}');
     });
 
 }
@@ -93,20 +93,15 @@ module.exports.removeProduct=function(req,res){
         req.session.cart=cart;
         if(cart.totalQty>0){
             res.locals.isCart=true;
-            console.log('true',cart.totalQty);
+            console.log('true', cart.totalQty);
 
         }
         else{
             res.locals.isCart=false;
             console.log('false case',cart.totalQty);
-            return res.render('cart-page',{
-                products:cart.generateArray(),
-                totalPrice:cart.totalPrice,
-                totalQty:cart.totalQty
-            })
+            return res.redirect('back');
         }
         return res.redirect('back');
-        // return res.render();
 
     })
 }

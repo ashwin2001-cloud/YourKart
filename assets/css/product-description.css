@@ -1,5 +1,5 @@
-button {
-  background-color: red;
+#final-add-to-cart {
+  background-color: #3482c3;
   height: 2.2rem;
   display: inline-block;
   margin-top: 0.5rem;
@@ -10,4 +10,5 @@ button {
   outline: none;
   cursor: pointer;
   border: none;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  padding-top: 10px; }

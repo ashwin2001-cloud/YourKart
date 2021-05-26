@@ -1,12 +1,18 @@
-body #cart-container #cart-item {
-  display: flex;
-  justify-content: space-between;
-  width: 60vw; }
-  body #cart-container #cart-item #description {
-    width: 20vw; }
-  body #cart-container #cart-item #remove-button {
-    height: 4vh;
-    width: 8vw; }
+body #cart-container {
+  margin: 0px 30px 50px; }
+  body #cart-container #cart-item {
+    display: flex;
+    justify-content: space-between;
+    width: 60vw;
+    align-items: center; }
+    body #cart-container #cart-item #description {
+      width: 20vw; }
+    body #cart-container #cart-item img {
+      margin-top: 2%;
+      width: 90px; }
+    body #cart-container #cart-item #remove-button {
+      height: 4vh;
+      width: 8vw; }
 
 body a input[type="submit"] {
   display: inline-block;

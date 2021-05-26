@@ -1,45 +1,47 @@
 <link rel="stylesheet" href="/css/cart-page.css">
 <% if(products!=null && products.length>0 ){ %>
-<div id="cart-container">
-    <h1>Shopping Cart</h1>
-<% for(var i of products){ %>
-    <% if(i.item){ %>
-    <div id="cart-item">
-        <div id="description">
-            <span><%= i.item.name %></span>
-            <span>(<%= i.item.description %>)</span>
-        </div>
+    <div id="cart-container">
+        <h1>Shopping Cart</h1>
+        <% for(var i of products){ %>
+        <% if(i.item){ %>
+        <div id="cart-item">
+            <div id="description">
+                <span><%= i.item.name %></span>
+                <span>(<%= i.item.description %>)</span>
+            </div>
+    
+            <img src="<%= i.item.avatar %>" alt="<%= i.name %>" width="50" height="100">
+            
+            
+            <span id="minus-symbol">
+                <a href="/users/cart/product/<%= i.item._id %>">
+                    <button><i class="fas fa-minus-circle"></i></button>
+                </a>
+            </span>
+            <span><%= i.qty %></span>
     
     
-    <img src="<%= i.item.avatar %>" alt="<%= i.name %>" width="50" height="100">
-    
-    
-    <span id="minus-symbol"><a href="/users/cart/product/<%= i.item._id %>">
-        <button><i class="fas fa-minus-circle"></i></button>
-    </a>
-    </span>
-    <span><%= i.qty %></span>
-    
-    
-    <span id="plus-symbol">
-        <a href="/users/cart/<%= i.item._id %>">
-            <button><i class="fas fa-plus-circle"></i></button>
-        </a>
-    </span>
-    <span><%= i.price %></span>
+            <span id="plus-symbol">
+                <a href="/users/cart/<%= i.item._id %>">
+                    <button><i class="fas fa-plus-circle"></i></button>
+                </a>
+            </span>
+            <span><%= i.price %></span>
 
-    <button id="remove-button">
-        <a href="/users/cart/removeproduct/<%= i.item._id %>">Remove</a>
-    </button>
-    </div>
-<% } %>
-<% } %>
+            <button id="remove-button">
+                <a href="/users/cart/removeproduct/<%= i.item._id %>">Remove</a>
+            </button>
+        </div>
+    <% } %>
+    <% } %>
+</div>
+<div style="margin:0px 30px 50px;">
+    <div><h1>Total quantity:<%= totalQty %></h1></div>
+    <div><h1>Total price:<%= totalPrice %></h1></div>
+    <a href="/users/cartpage/<%= locals.user.id %>/checkout"><input type="submit" style="background-color: rgb(52,130,195);" value="Checkout"></a>
+    <% }else{ %>
+        <h1>Your Basket is empty.</h1>
+    <% } %>
 </div>
 
-<div><h1>Total quantity:<%= totalQty %></h1></div>
-<div><h1>Total price:<%= totalPrice %></h1></div>
-<a href="/users/cartpage/<%= locals.user.id %>/checkout"><input type="submit" value="Checkout"></a>
-<% }else{ %>
-    <h1>Your Basket is empty.</h1>
-<% } %>
 <script src="/js/home_cart_symbol.js"></script>

@@ -8,12 +8,12 @@
                 </a>
                 
                 
-                <span><%= i.name %></span><br>
-                <span>Rs <%= i.price %></span>
+                <span style="padding-left:4%;"><%= i.name %></span><br>
+                <span style="padding-left:4%;">Rs <%= i.price %></span>
                 <% if(locals.user){ %>
                     <span id="cart-symbol"><a href="/users/cart/<%= i._id %>">
                     
-                        <button>Add to Cart<i class="fas fa-shopping-cart"></i></button>
+                        <button style="background-color:rgb(52,130,195); margin-top:14px; padding-top:10px;">Add to Cart<i class="fas fa-shopping-cart"></i></button>
                         
                     </a>
                     </span>

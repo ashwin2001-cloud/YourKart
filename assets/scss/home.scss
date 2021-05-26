@@ -3,10 +3,8 @@ body{
         margin-left:5rem;
         margin-right:5rem;
         #product-container{
-            display:flex;
-            justify-content:space-around;
-            flex-wrap:wrap;
             #product-box{
+                margin: 0px 20px;
                 height:15rem;
                 width:10rem;
                 border:1px solid black;

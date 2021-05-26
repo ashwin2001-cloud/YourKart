@@ -3,7 +3,11 @@ const path=require('path');
 const AVATAR_PATH=path.join('/uploads/products/avatars');
 
 module.exports.productAdd=function(req,res){
-    return res.render('vendor-product-add');
+    if(req.isAuthenticated() && req.user._id=='60ac7e29ec6f121cb9820459'){
+        console.log(req.user);
+        return res.render('vendor-product-add');
+    }
+    return res.redirect('/users/sign-in');
 }
 /*
 module.exports.avatarUpload=function(req,res,product){

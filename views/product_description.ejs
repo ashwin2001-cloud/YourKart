@@ -1,18 +1,29 @@
 <link rel="stylesheet" href="/css/product-description.css">
-<h1><%= product.name %></h1>
-
-<img src="<%= product.avatar %>" alt="<%= product.name %>" width="150" height="200">
-<h1><%= product.description %></h1>
-<h1>Rs <%= product.price %></h1>
-<% if(locals.user){ %>
-    <span id="cart-symbol"><a href="/users/cart/<%= product._id %>">
+<div style="margin:0px 80px 50px;">
+    <h1><%= product.name %></h1>
     
-        <button>Add to Cart<i class="fas fa-shopping-cart"></i></button>
+    <div style="display:flex;">
+        <img style="margin:0px 20px;" src="<%= product.avatar %>" alt="<%= product.name %>" width="150" height="200">
+        <span style="margin:0px 20px; line-height: 1px; padding-top: 10px;">
+            <h3>Type: <%= product.type %></h3>
+            <h4>Sub type: <%= product.subtype %></h4>
+            <p>Manufacturer: <%= product.manufacturer %></p>
+        </span>
+    </div>
+    
+    <h2><%= product.description %></h2>
+    <h2>Rs <%= product.price %></h2>
+    <% if(locals.user){ %>
+        <span id="cart-symbol"><a href="/users/cart/<%= product._id %>">
         
-    </a>
-    </span>
-<% }else{ %>
-    <span id="cart-symbol"><a href="/users/sign-in">
-        <button><i class="fas fa-shopping-cart"></i></button>
-    </a></span>
-<% } %>
+            <button id="final-add-to-cart">Add to Cart<i class="fas fa-shopping-cart"></i></button>
+            
+        </a>
+        </span>
+    <% }else{ %>
+        <h4 id="cart-symbol">
+            First <a href="/users/sign-in">Log In</a> to buy the product
+        </h4>
+    <% } %>
+</div>
+
