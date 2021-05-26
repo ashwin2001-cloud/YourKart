@@ -3,30 +3,12 @@ const path=require('path');
 const AVATAR_PATH=path.join('/uploads/products/avatars');
 
 module.exports.productAdd=function(req,res){
-    if(req.isAuthenticated() && req.user._id=='60ac7e29ec6f121cb9820459'){
+    if(req.isAuthenticated() && req.user.email=='ashwinbaranwal2001@gmail.com'){
         console.log(req.user);
         return res.render('vendor-product-add');
     }
     return res.redirect('/users/sign-in');
 }
-/*
-module.exports.avatarUpload=function(req,res,product){
-    Product.uploadedAvatar(req,res,function(err){
-        if(err){
-            console.log("****************multer error");
-            return;
-        }
-        if(req.file){
-            product.avatar=Product.avatarPath+'/'+req.file.fieldname;
-        }
-        product.save();
-    })
-
-
-
-
-}
-*/
 
 module.exports.create=function(req,res){
     //console.log(req.body);

@@ -27,22 +27,29 @@ const cartSchema=new mongoose.Schema({
 const Cart=mongoose.model('Cart',cartSchema);
 module.exports=Cart;
 */
+
 module.exports=function Cart(oldCart){
     this.items=oldCart.items || {};
     this.totalPrice=oldCart.totalPrice || 0;
     this.totalQty=oldCart.totalQty || 0;
     // this.isCart=isCardExist;
 
-    this.add=function(item,id){
+    this.add=function(item, id){
         var storedItem=this.items[id];
         if(!storedItem){
             storedItem=this.items[id]={item:item,qty:0,price:0}
+        }
+
+        if(storedItem.item.stock == storedItem.qty){
+            console.log('stock is full');
+            return;
         }
         
         storedItem.qty++;
         storedItem.price=storedItem.item.price*storedItem.qty;
         this.totalQty+=1;
         this.totalPrice+=storedItem.item.price;
+        console.log(storedItem.item.stock, '******');
         
     }
     this.subtract=function(item,id){
@@ -55,6 +62,7 @@ module.exports=function Cart(oldCart){
         storedItem.price=storedItem.item.price*storedItem.qty;
         this.totalQty-=1;
         this.totalPrice-=storedItem.item.price;
+        
     }
     //empty a cart after buying
     this.emptyCart=function(){
@@ -70,12 +78,13 @@ module.exports=function Cart(oldCart){
             
         }
     }
-    this.remove=function(item,id){
+    this.remove=function(item, id){
 
         var storedItem=this.items[id];
         if(storedItem.qty<=0){
             return ;
         }
+        
         //storedItem.price=storedItem.item.price*storedItem.qty;
         this.totalQty-=storedItem.qty;
         this.totalPrice-=storedItem.qty*storedItem.item.price;

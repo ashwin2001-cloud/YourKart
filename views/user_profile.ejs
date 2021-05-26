@@ -2,4 +2,9 @@
 <div style="margin: 0px 20px 50px;">
     <h1><%= user.name %></h1>
     <h2><%= user.email %></h2>
+    <% if(user.email == 'ashwinbaranwal2001@gmail.com'){ %>
+        <div id="add-prod">
+            <a href="/vendor/product-insertion-page"><button>Add products</button></a>
+        </div>
+    <% } %>
 </div>

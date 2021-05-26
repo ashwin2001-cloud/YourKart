@@ -1,14 +1,25 @@
 body{
     #cart-container{
-        margin:0px 30px 50px;
+        margin:0px 60px 50px;
         // border: 1px solid black;
+
 
         #cart-item{
             display:flex;
             justify-content:space-between;
-            width:60vw;
-            // border: 1px solid black;
+            width:80vw;
+            height:90px;
+            border-bottom: 1px solid black;
             align-items: center;
+            
+            #inc-dec{
+                width:170px; 
+                height: 100%; 
+                display: flex; 
+                align-items: center; 
+                justify-content: space-between;
+            }
+
             #description{
                 width:20vw;
             }
@@ -24,6 +35,11 @@ body{
 
 
         }
+    }
+
+    #pricing{
+        margin:0px 60px 50px; 
+        line-height: 14px;
     }
         a{
             input[type="submit"]{
@@ -51,4 +67,22 @@ body{
 
 
 
+}
+
+#checkout-button{
+    background-color:rgb(52,130,195);
+    height:2.2rem;
+    // background-color: palevioletred;
+    display: inline-block;
+    margin-top: 0.5rem;
+        // border-radius:3%;
+    width: 10rem;
+    padding: 0.8rem;
+    color:white;
+    font-size:1rem;
+    outline: none;
+    cursor: pointer;
+    border:none;
+    font-family:sans-serif;
+    padding-top:10px;
 }

@@ -1,27 +1,28 @@
-body #checkout-page div {
-  display: flex;
-  flex-direction: space-between;
-  margin-top: 0.5rem; }
-  body #checkout-page div label {
-    width: 10vw; }
-  body #checkout-page div input {
+body #checkout-page {
+  margin-left: 40px; }
+  body #checkout-page div {
+    display: flex;
+    flex-direction: space-between;
+    margin-top: 0.5rem; }
+    body #checkout-page div label {
+      width: 10vw; }
+    body #checkout-page div input {
+      display: inline-block;
+      width: 80vw;
+      padding: 0.3rem;
+      font-size: 0.7rem;
+      font-family: sans-serif;
+      outline-color: black; }
+  body #checkout-page input[type="submit"] {
     display: inline-block;
-    width: 80vw;
+    margin-top: 1rem;
+    width: 20vw;
     padding: 0.3rem;
     font-size: 0.7rem;
     font-family: sans-serif;
-    outline-color: black; }
-
-body #checkout-page input[type="submit"] {
-  display: inline-block;
-  margin-top: 1rem;
-  width: 20vw;
-  padding: 0.3rem;
-  font-size: 0.7rem;
-  font-family: sans-serif;
-  background-color: palevioletred;
-  color: white;
-  font-size: 1rem;
-  outline: none;
-  cursor: pointer;
-  border: none; }
+    background-color: palevioletred;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+    border: none; }

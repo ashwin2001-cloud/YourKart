@@ -3,6 +3,7 @@ body{
 
     }
     #product-add{
+        margin-left: 30px;
         div{
             display:flex;
             flex-direction: space-between;
@@ -24,6 +25,7 @@ body{
             
         }
         input[type="submit"]{
+            margin-top:20px;
             display: inline-block;
               
                 // border-radius:3%;

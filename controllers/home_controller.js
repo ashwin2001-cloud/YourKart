@@ -12,23 +12,27 @@ module.exports.home=function(req,res){
         });
     });
 }
-module.exports.productDescription=function(req,res){
-    var productId=req.params.id;
-    console.log(productId,'product id');
-    Product.findById(productId,function(err,product){
-        if(err){
-            console.log('error in loading the project');
-            return;
+module.exports.productDescription=async function(req,res){
+    try{
+        var productId=req.params.id;
+        let product= await Product.findById(productId).populate({
+            path: 'reviews',
+            populate:{
+                path: 'user'
+            }
+        });  
+        for(review of product.reviews){
+            review = await review.populate('user', 'name').execPopulate();
         }
-        console.log('viewed product',product);
-        if(product){
-            return res.render('product_description',{
-                product:product
-            });
-        }
-        else{
-            console.log('error in loading the project');
-            return;
-        }
-    });
+        
+
+        return res.render('product_description',{
+            product:product
+        });
+
+    }catch(err){
+        console.log(err);
+        return;
+    }
+
 }

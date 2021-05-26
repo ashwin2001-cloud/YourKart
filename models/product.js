@@ -41,7 +41,13 @@ const productSchema=new mongoose.Schema({
     },
     avatar:{
         type:String
-    }
+    },
+    reviews: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Review'
+        }
+    ]
     
 
 },{

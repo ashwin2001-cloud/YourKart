@@ -19,15 +19,16 @@ module.exports.addProductsInCart=function(req,res){
             console.log('back');
             return res.redirect('/');
         }
-        cart.add(product,product_id);
+        cart.add(product, product_id);
         req.session.cart=cart;
         if(cart.totalQty>0){
             res.locals.isCart=true;
         }
-        console.log(req.session.cart);
-        console.log(cart.totalQty," ",res.locals.isCart)
-        console.log("session:::::::",req.session);
-        console.log(req.session.cart.items);
+        console.log('!!!!!!!!!!!!!!', product, '!!!!!!!!!!!!!!');
+        // console.log(req.session.cart);
+        // console.log(cart.totalQty," ",res.locals.isCart)
+        // console.log("session:::::::",req.session);
+        // console.log(req.session.cart.items);
         //console.log('generated array',cart.generateArray());
         return res.redirect('/users/cartpage/${req.user.id}');
     });
