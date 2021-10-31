@@ -4,7 +4,7 @@ body #home-page-container {
   body #home-page-container #product-container #product-box {
     margin: 0px 20px;
     height: 15rem;
-    width: 10rem;
+    width: 12rem;
     border: 1px solid black;
     display: inline-block;
     margin-left: 2rem;
@@ -23,7 +23,8 @@ body #home-page-container {
       outline: none;
       cursor: pointer;
       border: none;
-      font-family: sans-serif; }
+      font-family: sans-serif;
+      margin-left: 10%; }
     body #home-page-container #product-container #product-box span {
       display: inline-block;
       margin: auto; }

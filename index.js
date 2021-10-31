@@ -3,6 +3,8 @@ const cookieParser=require('cookie-parser');
 const app=express();
 const port=process.env.PORT || 8000;
 const sassMiddleware=require('node-sass-middleware');
+const env= require('./config/environment');
+console.log(env);
 app.use(sassMiddleware({
     src:'./assets/scss',
     dest:'./assets/css',
@@ -37,7 +39,7 @@ app.set('views','./views');
 
 app.use(session({
     name:'yourkart',
-    secret: 'blahsomething',
+    secret: env.session_cookie_key,
     saveUninitialized:false,
     resave:false,
     cookie:{

@@ -1,3 +1,4 @@
+<title><%= product.name %></title>
 <link rel="stylesheet" href="/css/product-description.css">
 <div style="margin:0px 80px 50px;">
     
@@ -17,7 +18,7 @@
                 </h4>
             <% } %>
         </span>        
-        <span style="margin:0px 20px; line-height: 2px; padding-top: 10px; width:260px;">
+        <span style="margin:0px 50px; margin-top: -20px; width:260px;">
             <h1><%= product.name %></h1>
             <h3 style="color: maroon;">Price: INR <%= product.price %></h3>
             <h3>Type: <%= product.type %></h3>
@@ -26,15 +27,21 @@
             <p>Description: <%= product.description %></p>
         </span>
 
-        <div style="width:480px; margin-left:40px;">
+
+        <% if(product.reviews.length == 0){ %>
+            <div style="width:480px; margin-left:40px; border: 1px solid grey;">
+        <% } else { %>
+            <div style="width:480px; margin-left:40px;">
+        <% } %>
             <form action="/review/create" method="POST">
-                <input style="width:380px; height: 40px;" type="text" placeholder="Add a review" name="content">
+                <input style="width:78%; height: 40px;" type="text" placeholder="Add a review" name="content">
                 <input type="hidden" name="user" value="<%= locals.user._id %>">
                 <input type="hidden" name="product" value="<%= product._id %>">
-                <input style="height: 40px; width:auto" type="submit" value="Post Review">
+                <input style="height: 40px; width:20%" type="submit" value="Post Review">
             </form>
 
             <!-- <%= product.reviews %> +++ -->
+            
             <h3>Customer Reviews</h3>
             <% for(i of product.reviews){ %>
                 <div style="margin-top:20px;">

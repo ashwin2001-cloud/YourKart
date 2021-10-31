@@ -8,13 +8,8 @@ const Product=require('../models/product');
 module.exports.addProductsInCart=function(req,res){
     var product_id=req.params.id;
     var cart=new Cart(req.session.cart ? req.session.cart : {} );
-    // if(req.session.cart){
-    //     var cart=new Cart(req.session.cart,true );
-    // }
-    // else{
-    //     var cart=new Cart({},false );
-    // }
-    Product.findById(product_id,function(err,product){
+
+    Product.findById(product_id, function(err,product){
         if(err){
             console.log('back');
             return res.redirect('/');

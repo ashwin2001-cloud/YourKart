@@ -4,13 +4,13 @@
   "description": "online transactions of goods and services",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "ecommerce"
   ],
-  "author": "Shubham Kant",
+  "author": "Ashwin Baranwal",
   "license": "ISC",
   "dependencies": {
     "connect-mongo": "^3.2.0",

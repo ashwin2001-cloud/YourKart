@@ -6,7 +6,7 @@ body{
             #product-box{
                 margin: 0px 20px;
                 height:15rem;
-                width:10rem;
+                width:12rem;
                 border:1px solid black;
                 //position: relative;
                 // background-color:#0066c0;
@@ -34,6 +34,7 @@ body{
                     cursor: pointer;
                     border:none;
                     font-family:sans-serif;
+                    margin-left:10%;
                 }
                 span{
                     display:inline-block;

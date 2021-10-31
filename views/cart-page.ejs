@@ -1,3 +1,4 @@
+<title>YourKart Details</title>
 <link rel="stylesheet" href="/css/cart-page.css">
 <% if(products!=null && products.length>0 ){ %>
     <div id="cart-container">
@@ -13,7 +14,7 @@
             <%  } %>
             <div id="description">
                 <span><%= i.item.name %></span>
-                <span>(<%= i.item.description %>)</span>
+                <!-- <span>(<%= i.item.description %>)</span> -->
             </div>
     
             <img src="<%= i.item.avatar %>" alt="<%= i.name %>" width="50" height="80" style="margin-top: -2px; border: 1px solid black;">
